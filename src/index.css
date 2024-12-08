@@ -10,3 +10,12 @@
 html {
   scroll-behavior: smooth;
 }
+/* Target the scrollbar for webkit browsers */
+html::-webkit-scrollbar {
+  display: none;
+}
+
+/* Ensure the #root is scrollable */
+html {
+  overflow: auto; /* Make the content scrollable */
+}
