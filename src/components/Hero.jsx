@@ -15,7 +15,6 @@ import { motion } from "framer-motion";
 import { projects } from "../constants/constants.js";
 import CodeChef from "../icons/CodeChef.jsx";
 import SocialIcons from "./SocialIcons.jsx";
-import ModelViewer from "./ModelViewer.jsx";
 const Hero = () => {
   return (
       <motion.div

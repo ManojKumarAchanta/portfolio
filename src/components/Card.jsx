@@ -1,19 +1,5 @@
-import React, { useEffect, useState } from "react";
-import {
-  MoveLeft,
-  MoveRight,
-  Github,
-  Linkedin,
-  Code,
-  Instagram,
-  Loader,
-} from "lucide-react";
-import { BlinkBlur } from "react-loading-indicators";
-import toast, { Toaster } from "react-hot-toast";
-import Typewriter from "typewriter-effect";
+import React from "react";
 import { motion } from "framer-motion";
-import { projects } from "../constants/constants.js";
-import CodeChef from "../icons/CodeChef.jsx";
 
 const Card = ({ title, description, img, github, url }) => {
   const openPage = (link) => {
