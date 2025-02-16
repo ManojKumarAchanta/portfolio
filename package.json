@@ -4,13 +4,14 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
     "@fontsource/inter": "^5.1.1",
+    "@fontsource/poppins": "^5.1.1",
     "@react-three/drei": "^9.121.5",
     "@react-three/fiber": "^8.17.14",
     "@tailwindcss/vite": "^4.0.6",

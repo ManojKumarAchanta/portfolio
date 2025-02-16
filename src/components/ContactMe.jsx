@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import emailjs from "emailjs-com";
-import { toast } from "react-toastify";
+import { toast } from "react-hot-toast";
 import { motion } from "framer-motion";
-import { Mail, User, MessageSquare } from "lucide-react";
+import { Mail, User, MessageSquare, Loader } from "lucide-react";
 
 const ContactMe = () => {
+  const [loading, setLoading] = useState(false);
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    setLoading(true);
+
     emailjs
       .sendForm(
         "service_hzso9dr",
@@ -15,18 +19,11 @@ const ContactMe = () => {
         "K1QZF_ydxUt5aGavx"
       )
       .then(() => {
-        toast.success("Message sent successfully!", {
-          position: "bottom-right",
-          autoClose: 3000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          theme: "dark",
-        });
+        toast.success("Message sent successfully!");
         e.target.reset();
       })
-      .catch(() => toast.error("Error sending message!"));
+      .catch(() => toast.error("Error sending message!"))
+      .finally(() => setLoading(false));
   };
 
   return (
@@ -39,7 +36,7 @@ const ContactMe = () => {
     >
       <motion.form
         onSubmit={handleSubmit}
-        className=" p-10 rounded-2xl space-y-6 w-full max-w-2xl"
+        className="p-10 rounded-2xl space-y-6 w-full max-w-2xl"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -123,11 +120,23 @@ const ContactMe = () => {
         {/* Submit Button */}
         <motion.button
           type="submit"
-          className="w-full bg-blue-500 text-white text-lg font-semibold py-3 rounded-xl shadow-md hover:bg-blue-600 transition duration-200"
-          whileHover={{ scale: 1.05 }}
+          className={`w-full text-lg font-semibold py-3 rounded-xl shadow-md transition duration-200 flex items-center justify-center ${
+            loading
+              ? "bg-gray-500 cursor-not-allowed"
+              : "bg-blue-500 hover:bg-blue-600"
+          }`}
+          whileHover={{ scale: loading ? 1 : 1.05 }}
           transition={{ duration: 0.2 }}
+          disabled={loading}
         >
-          Send Message
+          {loading ? (
+            <>
+              <Loader className="animate-spin mr-2" size={20} />
+              Sending...
+            </>
+          ) : (
+            "Send Message"
+          )}
         </motion.button>
       </motion.form>
     </motion.div>

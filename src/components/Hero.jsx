@@ -13,7 +13,7 @@ const Hero = () => {
       <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-3 md:mb-4 leading-tight">
         Hello, I'm <span className="text-blue-400">Manoj Kumar</span>
       </h1>
-      <div className="text-3xl md:text-4xl font-mono tracking-wide lg:text-4xl font-semibold text-white mb-5 md:mb-6">
+      <div className="text-4xl md:text-5xl  tracking-wide lg:text-4xl font-semibold text-white mb-5 md:mb-6">
         <Typewriter
           options={{
             strings: [
@@ -38,13 +38,13 @@ const Hero = () => {
       <div className="flex flex-col md:flex-row gap-4 md:gap-5 mt-4 md:mt-6 mb-6 md:mb-8 items-center justify-center w-full max-w-lg">
         <a // Removed motion.a - using standard <a> tag
           href="#projects"
-          className="px-5 py-2 rounded-lg text-base font-semibold shadow-md bg-blue-500 text-white hover:bg-blue-600 transition-colors duration-300 w-full text-center" // Direct Tailwind classes - button style
+          className="px-5 py-2 md:px-6 md:py-4 rounded-lg text-base font-semibold shadow-md bg-blue-500 text-white hover:bg-blue-600 transition-colors duration-300 w-full text-center" // Direct Tailwind classes - button style
         >
           View Projects
         </a>
         <a // Removed motion.a - using standard <a> tag
           href="#contact"
-          className="px-5 py-2 rounded-lg text-base font-semibold shadow-md text-blue-500 border border-blue-500 hover:bg-blue-500 hover:text-white transition-colors duration-300 w-full text-center" // Direct Tailwind classes - button style
+          className="px-5 py-2 md:px-6 md:py-4 rounded-lg text-base font-semibold shadow-md text-blue-500 border border-blue-500 hover:bg-blue-500 hover:text-white transition-colors duration-300 w-full text-center" // Direct Tailwind classes - button style
         >
           Get in Touch
         </a>
@@ -52,7 +52,7 @@ const Hero = () => {
           href={resumeURL}
           target="_blank"
           rel="noopener noreferrer"
-          className="px-5 py-2 rounded-lg text-base font-semibold shadow-md bg-gray-800 text-white hover:bg-gray-700 transition-colors duration-300 flex items-center justify-center w-full" // Direct Tailwind classes - button style
+          className="px-5 py-2 md:px-6 md:py-4 rounded-lg text-base font-semibold shadow-md bg-gray-800 text-white hover:bg-gray-700 transition-colors duration-300 flex items-center justify-center w-full" // Direct Tailwind classes - button style
           aria-label="Download Resume"
         >
           Resume <ExternalLink className="ml-2 h-4 w-4" />

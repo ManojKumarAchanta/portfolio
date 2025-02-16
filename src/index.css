@@ -10,3 +10,6 @@ html{
 button{
     cursor: pointer;
 }
+body {
+  font-family: "Inter", sans-serif;
+}
