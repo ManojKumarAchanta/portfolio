@@ -21,21 +21,26 @@ const Projects = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
-      <h1 className="text-4xl md:text-5xl font-bold text-blue-400 mb-12">
+      <h1 className="text-4xl md:text-5xl font-semibold bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 text-transparent bg-clip-text mb-12">
         Projects
       </h1>
 
       {isMobile ? (
-        <div id="mbl" className="flex overflow-x-auto gap-6 w-full pb-4">
+        <div
+          id="mbl"
+          className="flex overflow-x-auto gap-6 w-full pb-4 max-h-full"
+        >
           {projects.map((project, index) => (
             <div
               key={index}
-              className="min-w-[90%] sm:min-w-[80%]  p-4 rounded-xl "
+              className="min-w-[98%] sm:min-w-[90%]  p-4 rounded-xl "
             >
               <Card
                 title={project.title}
                 description={project.description}
                 img={project.img}
+                github={project.github}
+                url={project.url}
               />
             </div>
           ))}
@@ -48,6 +53,8 @@ const Projects = () => {
               title={project.title}
               description={project.description}
               img={project.img}
+              github={project.github}
+              url={project.url}
             />
           ))}
         </div>

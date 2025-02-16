@@ -1,1 +1,12 @@
 @import "tailwindcss";
+
+html::-webkit-scrollbar{
+    display: none;
+}
+html{
+    scroll-snap-type: proximity;
+    scroll-behavior: smooth;
+}
+button{
+    cursor: pointer;
+}

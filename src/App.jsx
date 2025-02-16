@@ -6,29 +6,51 @@ import Skills from "./components/Skills.jsx";
 import ContactMe from "./components/ContactMe.jsx";
 import Footer from "./components/Footer.jsx";
 import Certifications from "./components/Certifications.jsx";
-
+import { motion } from "framer-motion"; // Import motion for App container animation
+import "@fontsource/inter"; 
+import TimeLine from "./components/TimeLine.jsx";
 const App = () => {
   return (
-    <div>
-      <Toaster />
+    <motion.div
+      className="scroll-smooth " // Enable smooth scrolling
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+    >
+      <Toaster position="top-right" reverseOrder={false} />{" "}
+      {/* Toaster position */}
       <Navbar />
-      <section className="min-h-screen bg-gray-100">
-        <Hero />
-      </section>
-      <section className="min-h-screen bg-gray-100">
-        <Projects />
-      </section>
-      <section className="min-h-screen bg-gray-100">
-        <Skills />
-      </section>
-      <section className="min-h-screen bg-gray-100">
-        <Certifications />
-      </section>
-      <section className="min-h-screen bg-gray-100">
-        <ContactMe />
-      </section>
+      <main>
+        
+          <Hero />
+        <section id="timeline" className="bg-gray-800">
+          {" "}
+          {/* Alternate section background */}
+          <TimeLine />
+        </section>
+        <section id="projects" className="bg-gray-800">
+          {" "}
+          {/* Alternate section background */}
+          <Projects />
+        </section>
+        <section id="skills" className="bg-gray-900">
+          {" "}
+          {/* Alternate section background */}
+          <Skills />
+        </section>
+        <section id="certifications" className="bg-gray-800">
+          {" "}
+          {/* Alternate section background */}
+          <Certifications />
+        </section>
+        <section id="contact" className="bg-gray-900">
+          {" "}
+          {/* Alternate section background */}
+          <ContactMe />
+        </section>
+      </main>
       <Footer />
-    </div>
+    </motion.div>
   );
 };
 
