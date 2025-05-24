@@ -4,5 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  allowedHosts: ["portfolio-bq4m.onrender.com"],
+  server: {
+    allowedHosts: ["portfolio-bq4m.onrender.com"],
+  },
 });
